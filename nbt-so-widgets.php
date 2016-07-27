@@ -45,6 +45,7 @@ if (!class_exists( 'NBT_SiteOrigin_Widgets' )) {
 		private function __construct() {
 			$this->define_constants();
 			$this->includes();
+			$this->hooks();
 
 			add_action( 'init', array($this, 'load_plugin_textdomain') );
 		}
@@ -77,7 +78,15 @@ if (!class_exists( 'NBT_SiteOrigin_Widgets' )) {
 
 		private function includes() {
 			require_once NBTSOW_PLUGIN_DIR . 'includes/class-nbtsow-setup.php';
-			
+		}
+
+		private function hooks() {
+            add_action('wp_enqueue_scripts', array($this, 'load_frontend_scripts'), 10);
+        }
+
+		public function load_frontend_scripts() {
+			wp_register_style('nbt-so-styles', NBTSOW_PLUGIN_URL . 'assets/nbt-so-style.css', array(), NBTSOW_VERSION);
+            wp_enqueue_style('nbt-so-styles');
 		}
 	}
 }
