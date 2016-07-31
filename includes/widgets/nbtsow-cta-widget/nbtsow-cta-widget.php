@@ -40,7 +40,7 @@ class NBTSOW_CTA_Widget extends SiteOrigin_Widget {
 				),
 				'headline' => array(
 					'type' => 'section',
-					'label' => __('Headline', 'so-widgets-bundle'),
+					'label' => esc_html__('Headline', 'nbtsow'),
 					'hide' => true,
 					'fields' => array(
 						'headline_text' => array(
@@ -49,23 +49,23 @@ class NBTSOW_CTA_Widget extends SiteOrigin_Widget {
 						),
 						'headline_tag' => array(
 							'type' => 'select',
-							'label' => __( 'HTML Tag', 'so-widgets-bundle' ),
+							'label' => esc_html__( 'HTML Tag', 'nbtsow' ),
 							'default' => 'h2',
 							'options' => array(
-								'h1' => __( 'H1', 'so-widgets-bundle' ),
-								'h2' => __( 'H2', 'so-widgets-bundle' ),
-								'h3' => __( 'H3', 'so-widgets-bundle' ),
-								'h4' => __( 'H4', 'so-widgets-bundle' ),
-								'h5' => __( 'H5', 'so-widgets-bundle' ),
-								'h6' => __( 'H6', 'so-widgets-bundle' ),
-								'p' => __( 'Paragraph', 'so-widgets-bundle' ),
+								'h1' =>esc_html__( 'H1', 'nbtsow' ),
+								'h2' =>esc_html__( 'H2', 'nbtsow' ),
+								'h3' =>esc_html__( 'H3', 'nbtsow' ),
+								'h4' =>esc_html__( 'H4', 'nbtsow' ),
+								'h5' =>esc_html__( 'H5', 'nbtsow' ),
+								'h6' =>esc_html__( 'H6', 'nbtsow' ),
+								'p' =>esc_html__( 'Paragraph', 'nbtsow' ),
 							),
 						),
 					),
 				),
 				'sub_headline' => array(
 					'type' => 'section',
-					'label' => __('Sub Headline', 'so-widgets-bundle'),
+					'label' =>esc_html__('Sub Headline', 'nbtsow'),
 					'hide' => true,
 					'fields' => array(
 						'subhead_text' => array(
@@ -74,23 +74,23 @@ class NBTSOW_CTA_Widget extends SiteOrigin_Widget {
 						),
 						'subhead_tag' => array(
 							'type' => 'select',
-							'label' => __( 'HTML Tag', 'so-widgets-bundle' ),
+							'label' => esc_html__( 'HTML Tag', 'nbtsow' ),
 							'default' => 'h3',
 							'options' => array(
-								'h1' => __( 'H1', 'so-widgets-bundle' ),
-								'h2' => __( 'H2', 'so-widgets-bundle' ),
-								'h3' => __( 'H3', 'so-widgets-bundle' ),
-								'h4' => __( 'H4', 'so-widgets-bundle' ),
-								'h5' => __( 'H5', 'so-widgets-bundle' ),
-								'h6' => __( 'H6', 'so-widgets-bundle' ),
-								'p' => __( 'Paragraph', 'so-widgets-bundle' ),
+								'h1' => esc_html__( 'H1', 'nbtsow' ),
+								'h2' => esc_html__( 'H2', 'nbtsow' ),
+								'h3' => esc_html__( 'H3', 'nbtsow' ),
+								'h4' => esc_html__( 'H4', 'nbtsow' ),
+								'h5' => esc_html__( 'H5', 'nbtsow' ),
+								'h6' => esc_html__( 'H6', 'nbtsow' ),
+								'p' => esc_html__( 'Paragraph', 'nbtsow' ),
 							),
 						),
 					),
 				),
 				'button' => array(
 					'type' => 'section',
-					'label' => __('Button', 'so-widgets-bundle'),
+					'label' => esc_html__('Button', 'nbtsow'),
 					'hide' => true,
 					'fields' => array(
 						'button_text' => array(
@@ -105,12 +105,12 @@ class NBTSOW_CTA_Widget extends SiteOrigin_Widget {
 				),
 				'order' => array(
 					'type' => 'order',
-					'label' => __( 'Element Order', 'so-widgets-bundle' ),
+					'label' => esc_html__( 'Element Order', 'nbtsow' ),
 					'options' => array(
-						'image' => __( 'Image', 'so-widgets-bundle' ),
-						'headline' => __( 'Headline', 'so-widgets-bundle' ),
-						'sub_headline' => __( 'Sub Headline', 'so-widgets-bundle' ),
-						'button' => __( 'Button', 'so-widgets-bundle' ),
+						'image' => esc_html__( 'Image', 'nbtsow' ),
+						'headline' => esc_html__( 'Headline', 'nbtsow' ),
+						'sub_headline' => esc_html__( 'Sub Headline', 'nbtsow' ),
+						'button' => esc_html__( 'Button', 'nbtsow' ),
 					),
 					'default' => array( 'image', 'headline', 'sub_headline', 'button' ),
 				),
