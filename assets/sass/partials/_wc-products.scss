@@ -1,10 +1,4 @@
-#new-products {
-	@include bp(xs) {
-		margin-bottom: 45px
-	}
-	@include bp(sm) {
-		margin-bottom: 90px;
-	}
+#new-products {	
 	.home-products {
 		.product {
 			@include jw-column();

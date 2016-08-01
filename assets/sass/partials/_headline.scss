@@ -1,0 +1,21 @@
+.section-header {
+	.nbtsow-headline {
+		position: relative;
+		&:before {
+			content: "";
+			height: 1px;
+			width: 50px;
+			position: absolute;
+			bottom: 3px;
+			left: -65px;
+		}
+		&:after {
+			content: "";
+			height: 1px;
+			width: 50px;
+			position: absolute;
+			bottom: 3px;
+			right: -65px;
+		}
+	}
+}

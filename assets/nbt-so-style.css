@@ -1,11 +1,3 @@
-@media (max-width: 767px) {
-  #new-products {
-    margin-bottom: 45px; } }
-
-@media (min-width: 768px) {
-  #new-products {
-    margin-bottom: 90px; } }
-
 #new-products .home-products .product {
   position: relative;
   min-height: 1px;
@@ -168,3 +160,20 @@
   .button-ss:hover {
     background: #dfb858;
     color: #fff; }
+
+.section-header .nbtsow-headline {
+  position: relative; }
+  .section-header .nbtsow-headline:before {
+    content: "";
+    height: 1px;
+    width: 50px;
+    position: absolute;
+    bottom: 3px;
+    left: -65px; }
+  .section-header .nbtsow-headline:after {
+    content: "";
+    height: 1px;
+    width: 50px;
+    position: absolute;
+    bottom: 3px;
+    right: -65px; }
