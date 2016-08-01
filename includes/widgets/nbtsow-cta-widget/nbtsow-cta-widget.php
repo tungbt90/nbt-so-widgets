@@ -6,7 +6,7 @@ Author: Netbaseteam
 Author URI: http://netbaseteam.com
 */
 
-class NBTSOW_CTA_Widget extends SiteOrigin_Widget {
+class NBTSOW_Cta_Widget extends SiteOrigin_Widget {
 
 	function __construct() {
 
@@ -21,7 +21,7 @@ class NBTSOW_CTA_Widget extends SiteOrigin_Widget {
 				'image' => array(
 					'type' => 'section',
 					'label' => esc_html__('Image', 'nbtsow'),
-					'hide' => true,
+					'hide' => false,
 					'fields' => array(
 						'upload_image' => array(
 							'type' => 'media',
@@ -38,9 +38,9 @@ class NBTSOW_CTA_Widget extends SiteOrigin_Widget {
 						),
 					),
 				),
-				'headline' => array(
+				'headlines' => array(
 					'type' => 'section',
-					'label' => esc_html__('Headline', 'nbtsow'),
+					'label' => esc_html__('Headlines', 'nbtsow'),
 					'hide' => true,
 					'fields' => array(
 						'headline_text' => array(
@@ -61,13 +61,6 @@ class NBTSOW_CTA_Widget extends SiteOrigin_Widget {
 								'p' =>esc_html__( 'Paragraph', 'nbtsow' ),
 							),
 						),
-					),
-				),
-				'sub_headline' => array(
-					'type' => 'section',
-					'label' =>esc_html__('Sub Headline', 'nbtsow'),
-					'hide' => true,
-					'fields' => array(
 						'subhead_text' => array(
 							'type' => 'text',
 							'label' => esc_html__('Sub Headline Text', 'nbtsow'),
@@ -86,13 +79,6 @@ class NBTSOW_CTA_Widget extends SiteOrigin_Widget {
 								'p' => esc_html__( 'Paragraph', 'nbtsow' ),
 							),
 						),
-					),
-				),
-				'button' => array(
-					'type' => 'section',
-					'label' => esc_html__('Button', 'nbtsow'),
-					'hide' => true,
-					'fields' => array(
 						'button_text' => array(
 							'type' => 'text',
 							'label' => esc_html__('Button Text', 'nbtsow'),
@@ -108,11 +94,9 @@ class NBTSOW_CTA_Widget extends SiteOrigin_Widget {
 					'label' => esc_html__( 'Element Order', 'nbtsow' ),
 					'options' => array(
 						'image' => esc_html__( 'Image', 'nbtsow' ),
-						'headline' => esc_html__( 'Headline', 'nbtsow' ),
-						'sub_headline' => esc_html__( 'Sub Headline', 'nbtsow' ),
-						'button' => esc_html__( 'Button', 'nbtsow' ),
+						'headlines' => esc_html__( 'Headlines', 'nbtsow' )
 					),
-					'default' => array( 'image', 'headline', 'sub_headline', 'button' ),
+					'default' => array( 'image', 'headlines' ),
 				),
 			)
 		);
@@ -124,12 +108,12 @@ class NBTSOW_CTA_Widget extends SiteOrigin_Widget {
 			'upload_image' => $instance['image']['upload_image'],
 			'size' => $instance['image']['size'],
 			'alt' => $instance['image']['alt'],
-			'headline_text' => $instance['headline']['headline_text'],
-			'headline_tag' => $instance['headline']['headline_tag'],
-			'subhead_text' => $instance['sub_headline']['subhead_text'],
-			'subhead_tag' => $instance['sub_headline']['subhead_tag'],
-			'button_text' => $instance['button']['button_text'],
-			'href' => $instance['button']['href'],
+			'headline_text' => $instance['headlines']['headline_text'],
+			'headline_tag' => $instance['headlines']['headline_tag'],
+			'subhead_text' => $instance['headlines']['subhead_text'],
+			'subhead_tag' => $instance['headlines']['subhead_tag'],
+			'button_text' => $instance['headlines']['button_text'],
+			'href' => $instance['headlines']['href'],
 			'order' => $instance['order'],
 		);
 	}
@@ -144,4 +128,4 @@ class NBTSOW_CTA_Widget extends SiteOrigin_Widget {
 
 }
 
-siteorigin_widget_register('nbtsow-cta-widget', __FILE__, 'NBTSOW_CTA_Widget');
+siteorigin_widget_register('nbtsow-cta-widget', __FILE__, 'NBTSOW_Cta_Widget');

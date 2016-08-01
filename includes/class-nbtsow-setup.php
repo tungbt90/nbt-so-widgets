@@ -9,9 +9,15 @@ if (!defined('ABSPATH')) {
 if (!class_exists( 'NBTSOW_Setup' )) {
 	class NBTSOW_Setup {
 		public function __construct() {
-			add_filter('siteorigin_widgets_widget_folders', array($this, 'add_widgets'));
-			add_filter('siteorigin_panels_widget_dialog_tabs', array($this, 'add_widget_tabs'), 20);
-			add_filter('siteorigin_panels_widgets', array($this, 'add_bundle_groups'), 11);
+			add_filter( 'siteorigin_widgets_widget_folders', array($this, 'add_widgets') );
+			add_filter( 'siteorigin_panels_widget_dialog_tabs', array($this, 'add_widget_tabs'), 20 );
+			add_filter( 'siteorigin_panels_widgets', array($this, 'add_bundle_groups'), 11 );
+			add_filter( 'siteorigin_panels_row_style_fields', array($this, 'row_parallax_option') );
+			add_filter( 'siteorigin_panels_row_style_attributes', array($this, 'row_parallax_attribute'), 10, 3 );
+			add_filter( 'siteorigin_widgets_default_active', array($this, 'filter_default_widgets') );
+			// add_filter( 'siteorigin_panels_row_style_fields', array($this, 'row_margin_option') );
+			// add_filter( 'siteorigin_panels_row_style_attributes', array($this, 'row_margin_attributes'), 10, 4 );
+			// add_filter('siteorigin_panels_css_object', array($this, 'add_attributes_to_css_object'), 10, 3);
 		}
 
 		// Get all widget
@@ -23,7 +29,7 @@ if (!class_exists( 'NBTSOW_Setup' )) {
 		//Create 'NetBaseTeam SiteOrigin Widget' tab
 		function add_widget_tabs($tabs) {
 			$tabs[] = array(
-				'title' => __('NetBaseTeam SiteOrigin Widgets', 'nbtsow'),
+				'title' => esc_html__('NetBaseTeam SiteOrigin Widgets', 'nbtsow'),
 				'filter' => array(
 					'groups' => array('nbtsow-widgets')
 				)
@@ -40,6 +46,103 @@ if (!class_exists( 'NBTSOW_Setup' )) {
 			}
 			return $widgets;
 		}
+
+		// Default active on all widget
+		function filter_default_widgets($widgets) {
+			$widgets = array(
+				'nbtsow-headline-widget',
+				'nbtsow-cta-widget',
+				'nbtsow-products-widget',
+			);
+
+			return $widgets;
+		}
+
+		// Add parallax option to row
+		function row_parallax_option($fields) {
+			$fields['parallax'] = array(
+				'name' => esc_html__('Parallax Effect', 'nbtsow'),
+				'type' => 'checkbox',
+				'group' => 'design',
+				'description' => esc_html__('Add parallax effect for image\'s background'),
+				'priority' => 8,
+			);
+			return $fields;
+		}
+
+		// Parallax attribute
+		function row_parallax_attribute($attributes, $args) {
+			if( !empty($args['parallax']) ) {
+				array_push($attributes['class'], 'parallax');
+			}
+
+			return $attributes;
+		}
+
+		// Add Margin bottom in different screen size
+		// function row_margin_option($fields) {
+		// 	$fields['mobile_margin'] = array(
+		// 		'name' => esc_html__('Mobile Margin', 'nbtsow'),
+        //         'type' => 'measurement',
+        //         'group' => 'layout',
+        //         'description' => esc_html__('Mobile bottom margin for the row below 768px.', 'nbtsow'),
+        //         'priority' => 2,
+        //         'multiple' => true
+		// 	);
+		//
+		// 	$fields['tablet_margin'] = array(
+		// 		'name' => esc_html__('Tablet margin', 'nbtsow'),
+        //         'type' => 'measurement',
+        //         'group' => 'layout',
+        //         'description' => esc_html__('Tablet bottom margin for the rowon screen 768px to 991px.', 'nbtsow'),
+        //         'priority' => 3,
+        //         'multiple' => true
+		// 	);
+		//
+		// 	$fields['laptop_margin'] = array(
+		// 		'name' => esc_html__('Laptop margin', 'nbtsow'),
+        //         'type' => 'measurement',
+        //         'group' => 'layout',
+        //         'description' => esc_html__('Bottom margin for the row on screen 992px to 1024px.', 'nbtsow'),
+        //         'priority' => 4,
+        //         'multiple' => true
+		// 	);
+		//
+		// 	return $fields;
+		// }
+		//
+		// // Margin bottom attributes
+		// function row_margin_attributes($attributes, $args) {
+		// 	if( !empty($args['mobile_margin']) || !empty($args['tablet_margin']) || !empty($args['laptop_margin']) ) {
+		// 		array_push($attributes['class'], 'nbtsow-row');
+		// 	}
+		//
+		// 	return $attributes;
+		// }
+
+		// Add custom attributes to css object
+		// function add_attributes_to_css_object($css, $panels_data, $post_id) {
+		// 	foreach( $panels_data['grids'] as $gi => $grid ) {
+		// 		$grid_id = !empty($grid['style']['id']) ? (string)sanitize_html_class($grid['style']['id']) : intval($gi);
+		//
+		// 		$margin = (isset($grid['style']['laptop_margin']) ? $grid['style']['laptop_margin'] : null);
+		// 		if($margin) {
+		// 			$css->add_row_css($post_id, $grid_id, '.nbtsow-row', array('margin-bottom' => $margin), 1024);
+		// 		}
+		//
+		// 		$margin = (isset($grid['style']['tablet_margin']) ? $grid['style']['tablet_margin'] : null);
+		// 		if($margin) {
+		// 			$css->add_row_css($post_id, $grid_id, '.nbtsow-row', array('margin-bottom' => $margin), 992);
+		// 		}
+		//
+		// 		$margin = (isset($grid['style']['mobile_margin']) ? $grid['style']['mobile_margin'] : null);
+		// 		if($margin) {
+		// 			$css->add_row_css($post_id, $grid_id, '.nbtsow-row', array('margin-bottom' => $margin), 768);
+		// 		}
+		// 	}
+		//
+		// 	return $css;
+		// }
 	}
 }
 

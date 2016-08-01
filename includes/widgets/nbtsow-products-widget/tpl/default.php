@@ -16,12 +16,12 @@ if ( $products_loop->have_posts() ) {
 			$product = new WC_Product(get_the_ID());
 			?>
 			<div class="product-thumb">
-			<?php if (has_post_thumbnail()){
-				the_post_thumbnail();
-			} ?>
-			<p class="jw-button">
-				<a href="<?php the_permalink(); ?>">order now</a>
-			</p>
+				<?php if (has_post_thumbnail()){
+					the_post_thumbnail();
+				} ?>
+				<p class="product-button">
+					<a href="<?php the_permalink(); ?>">order now</a>
+				</p>
 			</div>
 			<div class="product-details">
 				<div class="product-meta">

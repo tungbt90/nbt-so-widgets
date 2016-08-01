@@ -1,6 +1,6 @@
 <?php
 /*
-Widget Name: Headline
+Widget Name: NetBaseTeam Extended Headline
 Description: A simple extended headline widget
 Author: NetBaseTeam
 Author URI: https://netbaseteam.com

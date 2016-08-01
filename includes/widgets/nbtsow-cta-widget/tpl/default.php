@@ -26,29 +26,25 @@ if( !empty($alt) ) $attr['alt'] = $alt;
 					<img <?php foreach($attr as $k => $v) echo $k .'="' . esc_attr($v) . '"'?> />
 				<?php endif;
 				break;
-			case 'headline':
-				if( !empty($headline_text) ) {
-					echo '<' . $headline_tag . ' class="nbt-cta-headline">' . wp_kses_post($headline_text) . '</' . $headline_tag . '>';
-				}
-				break;
-			case 'sub_headline':
-				if( !empty($subhead_text) ) {
-					echo '<' . $subhead_tag . ' class="nbt-cta-headline">' . wp_kses_post($subhead_text) . '</' . $subhead_tag . '>';
-				}
-				break;
-			case 'button':
-				if( !empty($button_text) ) {
-					$button_html = '<p class="jw-button">';
-					if( !empty($href) ) {
+			case 'headlines':
+				echo '<div class="nbt-cta-details">';
+					echo '<div class="nbt-cta-headlines">';
+					if( !empty($headline_text) ) {
+						echo '<' . $headline_tag . ' class="nbt-cta-headline">' . wp_kses_post($headline_text) . '</' . $headline_tag . '>';
+					}
+					if( !empty($subhead_text) ) {
+						echo '<' . $subhead_tag . ' class="nbt-cta-subhead">' . wp_kses_post($subhead_text) . '</' . $subhead_tag . '>';
+					}
+					if( !empty($button_text) ) {
+						$button_html = '<p class="nbtsow-cta-button">';
 						$button_html .= '<a href="' . $href . '">';
-					}
-					$button_html .= $button_text;
-					if( !empty($href) ) {
+						$button_html .= $button_text;
 						$button_html .= '</a>';
+						$button_html .= '</p>';
+						echo $button_html;
 					}
-					$button_html .= '</p>';
-					echo $button_html;
-				}
+					echo '</div>';
+				echo '</div>';
 				break;
 		}
 	}

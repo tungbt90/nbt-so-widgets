@@ -1,4 +1,4 @@
-.new-products {
+#new-products {
 	@include bp(xs) {
 		margin-bottom: 45px
 	}
@@ -46,7 +46,7 @@
 						visibility: visible;
 					}
 				}
-				.jw-button {
+				.product-button {
 					@include bp(xs) {
 						font-size: 14px;
 					}
@@ -54,12 +54,17 @@
 					visibility: hidden;
 					opacity: 0;
 					background: $c1;
+					text-transform: uppercase;
+					font-size: 12px;
+					padding: 8px 15px;
+					border-radius: 20px;
+					white-space: nowrap;
 					a {
 						color: #fff;
 					}
 				}
 				&:hover {
-					.jw-button {
+					.product-button {
 						visibility: visible;
 						opacity: 1;
 					}
