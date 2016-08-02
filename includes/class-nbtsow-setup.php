@@ -56,6 +56,7 @@ if (!class_exists( 'NBTSOW_Setup' )) {
 				'nbtsow-cta-widget',
 				'nbtsow-products-widget',
 				'nbtsow-blog-posts-widget',
+				'nbtsow-image-widget',
 			);
 
 			return $widgets;
