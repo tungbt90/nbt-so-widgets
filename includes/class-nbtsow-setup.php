@@ -18,6 +18,8 @@ if (!class_exists( 'NBTSOW_Setup' )) {
 			// add_filter( 'siteorigin_panels_row_style_fields', array($this, 'row_margin_option') );
 			// add_filter( 'siteorigin_panels_row_style_attributes', array($this, 'row_margin_attributes'), 10, 4 );
 			// add_filter('siteorigin_panels_css_object', array($this, 'add_attributes_to_css_object'), 10, 3);
+
+			add_action( 'init', 'add_thumb_size' );
 		}
 
 		// Get all widget
@@ -53,6 +55,7 @@ if (!class_exists( 'NBTSOW_Setup' )) {
 				'nbtsow-headline-widget',
 				'nbtsow-cta-widget',
 				'nbtsow-products-widget',
+				'nbtsow-blog-posts-widget',
 			);
 
 			return $widgets;
@@ -143,6 +146,12 @@ if (!class_exists( 'NBTSOW_Setup' )) {
 		//
 		// 	return $css;
 		// }
+
+		// Add image size for widgets
+		function add_thumb_size() {
+			add_image_size( 'nbtsow-blog-thumb', 737, 400 ,array('center', 'center') );
+			add_image_size( 'nbtsow-product-thumb', 340, 340 ,array('center', 'center') );
+		}
 	}
 }
 

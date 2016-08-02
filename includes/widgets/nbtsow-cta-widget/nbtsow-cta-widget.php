@@ -1,8 +1,8 @@
 <?php
 /*
-Widget Name: Netbaseteam Call To Action Button
+Widget Name: NetBaseTeam Call To Action Button
 Description: Call to action button with text, image and icon
-Author: Netbaseteam
+Author: NetBaseTeam
 Author URI: http://netbaseteam.com
 */
 
@@ -12,7 +12,7 @@ class NBTSOW_Cta_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'nbtsow-cta-widget',
-			esc_html__('Netbaseteam Call to action button', 'nbtsow'),
+			esc_html__('NetBaseTeam Call to action button', 'nbtsow'),
 			array(
 				'description' => esc_html__('Powerful call to action button', 'nbtsow'),
 			),

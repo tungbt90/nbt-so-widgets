@@ -1,8 +1,8 @@
 <?php
 /*
-Widget Name: Netbaseteam Woocommerce Products
+Widget Name: NetBaseTeam Woocommerce Products
 Description: Display Woocommerce Products
-Author: Netbaseteam
+Author: NetBaseTeam
 Author URI: http://netbaseteam.com
 */
 

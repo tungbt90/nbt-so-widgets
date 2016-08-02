@@ -17,7 +17,7 @@ if ( $products_loop->have_posts() ) {
 			?>
 			<div class="product-thumb">
 				<?php if (has_post_thumbnail()){
-					the_post_thumbnail();
+					the_post_thumbnail('nbtsow-product-thumb');
 				} ?>
 				<p class="product-button">
 					<a href="<?php the_permalink(); ?>">order now</a>
@@ -38,6 +38,7 @@ if ( $products_loop->have_posts() ) {
 	?>
 	</ul>
 	<?php
+	wp_reset_postdata();
 } else {
 	echo esc_html__('No products found');
 }
