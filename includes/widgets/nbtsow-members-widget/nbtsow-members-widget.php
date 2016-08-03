@@ -70,7 +70,7 @@ class NBTSOW_Members_Widget extends SiteOrigin_Widget {
 
 	function get_template_variables($instance, $args) {
 		return array(
-			'member' => !empty($instance['members']) ? $instance['members'] : array()
+			'members' => !empty($instance['members']) ? $instance['members'] : array(),
 		);
 	}
 

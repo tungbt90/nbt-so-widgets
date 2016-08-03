@@ -1,4 +1,5 @@
-<div class="nbtsow-members">
+<div class="nbtsow-members clear">
+
 	<?php foreach($members as $member): ?>
 	<div class="nbtsow-member">
 
@@ -33,10 +34,10 @@
 
 		<div class="nbtsow-member-details">
 			<?php if($member['name']): ?>
-			<h4 class="nbtsow-member-name"><?php wp_kses_post($member['name']); ?></h4>
+			<h4 class="nbtsow-member-name"><?php echo wp_kses_post($member['name']); ?></h4>
 			<?php endif;?>
 			<?php if($member['profile']): ?>
-			<p class="nbtsow-member-description"><?php wp_kses_post($member['profile']); ?></p>
+			<p class="nbtsow-member-description"><?php echo wp_kses_post($member['profile']); ?></p>
 			<?php endif;?>
 		</div>
 
